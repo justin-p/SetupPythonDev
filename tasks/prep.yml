@@ -1,0 +1,11 @@
+---
+- name: Updating and upgrading packages
+  apt:
+    upgrade: yes
+    update_cache: yes
+  become: yes
+
+- name: Disabling UFW
+  community.general.ufw:
+    state: disabled
+  become: yes
